@@ -1,6 +1,8 @@
 # Apache Guacamole
 1. Download docker-compose.yml from this repository.
 ~~~~
+anderson@lab:~$ wget https://raw.githubusercontent.com/andersonluispereira/apache-guacamole/refs/heads/main/docker-compose.yml
+
 anderson@lab:~$ ls
 docker-compose.yml
 ~~~~
