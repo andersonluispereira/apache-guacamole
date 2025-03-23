@@ -1,0 +1,42 @@
+services:
+  guac:
+    container_name: guac
+    image: guacamole/guacd
+    networks:
+      guac-net:
+
+  guac-web:
+    container_name: guac-web
+    image: guacamole/guacamole
+    ports:
+      - "8080:8080"
+    environment:
+      MYSQL_DATABASE: guacamole_db
+      MYSQL_HOSTNAME: guac-sql
+      MYSQL_PASSWORD: pass
+      MYSQL_USER: guacamole_user
+      GUACD_HOSTNAME: guac
+    depends_on:
+      - guac-sql
+      - guac
+    networks:
+      guac-net:
+
+  guac-sql:
+    container_name: guac-sql
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      guac-net:
+
+volumes:
+  dbdata:
+
+networks:
+  guac-net:
+    driver: bridge
+    ipam:
+      driver: default
