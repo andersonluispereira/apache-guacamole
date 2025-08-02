@@ -1,4 +1,6 @@
 # Apache Guacamole
+<img width="1280" height="720" alt="bitmap" src="https://github.com/user-attachments/assets/fe424bb0-b490-4e7d-a749-2d1a99a94660" />
+
 1. Download docker-compose.yml from this repository.
 ~~~~
 anderson@lab:~$ wget https://raw.githubusercontent.com/andersonluispereira/apache-guacamole/refs/heads/main/docker-compose.yml
